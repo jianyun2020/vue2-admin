@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
-import store from 'store'
+import store from '@/store'
 import { getToken } from '@/utils/auth'
 
 // 创建axios实例
@@ -14,7 +14,6 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     // 发送请求前可以在这里做点什么
-    
     if (store.getters.token) {
       // 让每个请求携带token
       // ['X-Token']用户设置的头文件的key值

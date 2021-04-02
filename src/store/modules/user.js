@@ -1,6 +1,5 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
-import { reject, resolve } from 'core-js/fn/promise'
 import router, { resetRouter } from '@/router'
 
 const state = {
