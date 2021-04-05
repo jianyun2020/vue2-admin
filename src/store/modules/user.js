@@ -51,14 +51,14 @@ const actions = {
         const { data } = response
 
         if (!data) {
-          reject('查找失败，请重新登录')
+          reject(new Error('查找失败，请重新登录'))
         }
 
         const { roles, name, avatar, introduction } = data
 
         // roles必须是一个非空数组
         if (!roles || roles.length <= 0) {
-          reject('getInfo: roles 必须是非空数组')
+          reject(new Error('getInfo: roles 必须是非空数组'))
         }
 
         commit('SET_ROLES', roles)
@@ -85,19 +85,19 @@ const actions = {
         dispatch('tagsView/delAllViews', null, { root: true })
         resolve()
       }).catch(error => {
-        reject(error)
+        reject(new Error(error))
       })
     })
   },
 
   // remove token
   resetToken ({ commit }) {
-    return new Promise((resolve => {
+    return new Promise(resolve => {
       commit('SET_TOKEN', '')
       commit('SET_ROLES', [])
       removeToken()
       resolve()
-    }))
+    })
   },
 
   // dynamically modify permissions
