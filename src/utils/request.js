@@ -20,7 +20,7 @@ service.interceptors.request.use(
       // 请根据实际需求修改
       config.headers['X-Token'] = getToken()
     }
-
+    console.log('被拦截了', process.env.VUE_APP_BASE_API)
     return config
   },
   error => {
