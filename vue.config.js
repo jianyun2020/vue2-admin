@@ -6,6 +6,10 @@ function resolve(dir) {
 }
 
 module.exports = {
+  publicPath: '/',
+  outputDir: 'dist',
+  assetsDir: 'static',
+  lintOnSave: process.env.NODE_ENV === 'development',
   chainWebpack(config) {
 
     // set svg-sprite-loader
