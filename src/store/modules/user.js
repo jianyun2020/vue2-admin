@@ -39,7 +39,7 @@ const actions = {
         setToken(data.token)
         resolve()
       }).catch(error => {
-        reject('store: ', error)
+        reject(error)
       })
     })
   },
