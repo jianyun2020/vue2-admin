@@ -1,7 +1,7 @@
 const Mock = require('mockjs')
 const { param2Obj } = require('./utils')
 
-const user = requireA('./user')
+const user = require('./user')
 
 const mocks = [
   ...user

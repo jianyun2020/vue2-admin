@@ -5,6 +5,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
+const name = 'NASA'
 const port = 8888
 
 module.exports = {
@@ -20,6 +21,14 @@ module.exports = {
       errors: true
     },
     before: require('./mock/mock-server.js')
+  },
+  configureWebpack: {
+    name: name,
+    resolve: {
+      alias: {
+        '@': resolve('src')
+      }
+    }
   },
   chainWebpack(config) {
 
