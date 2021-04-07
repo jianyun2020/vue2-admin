@@ -56,7 +56,7 @@ module.exports = [
       if (!info) {
         return {
           code: 50008,
-          message: '登录失败，不能获取用户信息'
+          message: '登录失败，不能获取用户信息。'
         }
       }
       return {
