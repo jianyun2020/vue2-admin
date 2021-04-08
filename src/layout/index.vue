@@ -2,16 +2,23 @@
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
+
+    <div :class="{ hasTagsView: needTagsView }" class="main-container">
+      <div :class="{'fixed-header': fixedHeader}">
+        <navbar />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { Sidebar } from './components'
+import { Sidebar, Navbar } from './components'
 import { mapState } from 'vuex'
 export default {
   name: 'Layout',
   components: {
-    Sidebar
+    Sidebar,
+    Navbar
   },
   computed: {
     ...mapState({
@@ -28,6 +35,11 @@ export default {
         withoutAnimation: this.sidebar.withoutAnimation,
         mobile: this.device === 'mobile'
       }
+    }
+  },
+  methods: {
+    handleClickOutside () {
+      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
     }
   }
 }

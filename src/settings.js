@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Vue2 Admin',
+  title: 'NASA',
   showSettings: true,
   tagsView: true,
   fixedHeader: false,
