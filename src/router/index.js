@@ -31,11 +31,13 @@ export const constantRoutes = [
   }
 ]
 
-// const router = new VueRouter({
-//   mode: 'history',
-//   base: process.env.BASE_URL,
-//   routes
-// })
+/**
+ * asyncRoutes
+ * the routes that need to be dynamically loaded based on user roles
+ */
+export const asyncRoutes = [
+
+]
 
 const createRouter = () => new VueRouter({
   mode: 'history', // require service support
