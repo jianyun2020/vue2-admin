@@ -6,19 +6,21 @@
     <div :class="{ hasTagsView: needTagsView }" class="main-container">
       <div :class="{'fixed-header': fixedHeader}">
         <navbar />
+        <tags-view v-if="needTagsView" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { Sidebar, Navbar } from './components'
+import { Sidebar, Navbar, TagsView } from './components'
 import { mapState } from 'vuex'
 export default {
   name: 'Layout',
   components: {
     Sidebar,
-    Navbar
+    Navbar,
+    TagsView
   },
   computed: {
     ...mapState({
