@@ -19,7 +19,49 @@ export default {
   name: 'RightPanel',
   props: {
     clickNotClose: {
-      
+      default: false,
+      type: Boolean
+    },
+    buttonTop: {
+      default: 250,
+      type: Number
+    }
+  },
+  data () {
+    return {
+      show: false
+    }
+  },
+  computed: {
+    theme () {
+      return this.$store.state.settings.theme
+    }
+  },
+  watch: {
+    show (value) {
+      if (value && !this.clickNotClose) {
+        this.addEventClick()
+      }
+      if (value) {
+        addClass(document.body, 'showRightPanel')
+      } else {
+        removeClass(document.body, 'showRightPanel')
+      }
+    }
+  },
+  mounted () {
+    this.insertToBogy()
+  },
+  beforeDestroy () {
+    const elx = this.$refs.rightPanel
+    elx.remove()
+  },
+  methods: {
+    addEventClick () {
+      window.addEventListener('click', this.closeSidebar)
+    },
+    closeSidebar (evt) {
+      const parent = evt.target.closest('.rightPanel')
     }
   }
 }
