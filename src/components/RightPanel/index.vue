@@ -50,7 +50,7 @@ export default {
     }
   },
   mounted () {
-    this.insertToBogy()
+    this.insertToBody()
   },
   beforeDestroy () {
     const elx = this.$refs.rightPanel
@@ -62,6 +62,15 @@ export default {
     },
     closeSidebar (evt) {
       const parent = evt.target.closest('.rightPanel')
+      if (!parent) {
+        this.show = false
+        window.removeEventListener('click', this.closeSidebar)
+      }
+    },
+    insertToBody () {
+      const elx = this.$refs.rightPanel
+      const body = document.querySelector('body')
+      body.insertBefore(elx, body.firstChild)
     }
   }
 }
