@@ -2,7 +2,7 @@
   <div ref="rightPanel" :class="{show: show}" class="right-Panel-container">
     <div class="rightPanel-background" />
     <div class="rightPanel">
-      <div class="handle-button" :sytle="{'top': buttonTop + 'px', 'background-color': theme}" @click="show=!show">
+      <div class="handle-button" :style="{'top': buttonTop + 'px', 'background-color': theme}" @click="show=!show">
         <i :class="show? 'el-icon-close' : 'el-icon-setting'" />
       </div>
       <div class="rightPanel-items">
@@ -91,7 +91,7 @@ export default {
   left: 0;
   opacity: 0;
   transition: opacity .3s cubic-bezier(.7, .3, .1, 1);
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0.2);
   z-index: -1;
 }
 

@@ -1,16 +1,26 @@
 <template>
   <div class="navbar">
     <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
+
+    <breadcrumb id="breadcrumb-container" class="breadcrumb-container"/>
+    <div class="right-menu">
+      <template v-if="device!=='mobile'">
+        <search id="header-search" class="right-menu-item" />
+      </template>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import Hamburger from '@/components/Hamburger'
-
+import Breadcrumb from '@/components/Breadcrumb'
+import Search from '@/components/HeaderSearch'
 export default {
   components: {
-    Hamburger
+    Hamburger,
+    Breadcrumb,
+    Search
   },
   computed: {
     ...mapGetters([
@@ -49,6 +59,38 @@ export default {
 
     &:hover {
       background: rgba(0, 0, 0, .025);
+    }
+  }
+
+  .breadcrumb-container {
+    float: left;
+  }
+
+  .right-menu {
+    float: right;
+    height: 100%;
+    line-height: 50px;
+
+    &:focus {
+      outline: none;
+    }
+
+    .right-menu-item {
+      display: inline-block;
+      padding: 0 8px;
+      height: 100%;
+      font-size: 18px;
+      color: #5a5e66;
+      vertical-align: text-bottom;
+
+      &.hover-effect {
+        cursor: pointer;
+        transition: background .3s;
+
+        &:hover {
+          background: rgba(0, 0, 0, .025);
+        }
+      }
     }
   }
 }
