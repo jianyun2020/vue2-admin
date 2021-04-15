@@ -33,7 +33,7 @@ export default {
     RightPanel,
     Settings
   },
-  mixins: ['ResizeMixin'],
+  mixins: [ResizeMixin],
   computed: {
     ...mapState({
       sidebar: state => state.app.sidebar,
