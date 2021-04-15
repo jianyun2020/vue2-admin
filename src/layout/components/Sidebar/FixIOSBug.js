@@ -5,7 +5,7 @@ export default {
     }
   },
   mounted () {
-    this.fixBugInIOS ()
+    this.fixBugInIOS()
   },
   methods: {
     fixBugInIOS () {

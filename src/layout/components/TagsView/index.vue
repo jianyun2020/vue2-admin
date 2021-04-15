@@ -68,7 +68,7 @@ export default {
     this.addTags()
   },
   methods: {
-    isActive(route) {
+    isActive (route) {
       return route.path === this.$route.path
     },
     isAffix (tag) {
@@ -83,7 +83,7 @@ export default {
             fullPath: tagPath,
             path: tagPath,
             name: route.name,
-            meta: { ... route.meta }
+            meta: { ...route.meta }
           })
         }
         if (route.children) {
@@ -126,7 +126,7 @@ export default {
         }
       })
     },
-    refreshSelectedTag(view) {
+    refreshSelectedTag (view) {
       this.$store.dispatch('tagsView/delCachedView', view).then(() => {
         const { fullPath } = view
         this.$nextTick(() => {

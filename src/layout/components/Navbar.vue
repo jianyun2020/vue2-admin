@@ -10,7 +10,7 @@ import Hamburger from '@/components/Hamburger'
 
 export default {
   components: {
-    Hamburger,
+    Hamburger
   },
   computed: {
     ...mapGetters([

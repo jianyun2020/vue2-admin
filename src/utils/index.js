@@ -5,7 +5,7 @@
  * @export
  * @param {HTMLElement} ele
  * @param {String} cls
- * @return {Boolean} 
+ * @return {Boolean}
  */
 export function hasClass (ele, cls) {
   return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'))
