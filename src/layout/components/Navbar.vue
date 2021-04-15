@@ -10,6 +10,10 @@
         <error-log class="errLog-container right-menu-item hover-effect" />
 
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
+
+        <el-tooltip content="Global Size" effect="dark" placement="bototm">
+          <size-select id="size-select" class="right-menu-item hover-effect" />
+        </el-tooltip>
       </template>
     </div>
   </div>
@@ -22,6 +26,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import Search from '@/components/HeaderSearch'
 import ErrorLog from '@/components/ErrorLog'
 import Screenfull from '@/components/Screenfull'
+import SizeSelect from '@/components/SizeSelect'
 
 export default {
   components: {
@@ -29,7 +34,8 @@ export default {
     Breadcrumb,
     Search,
     ErrorLog,
-    Screenfull
+    Screenfull,
+    SizeSelect
   },
   computed: {
     ...mapGetters([
