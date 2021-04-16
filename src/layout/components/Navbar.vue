@@ -15,6 +15,32 @@
           <size-select id="size-select" class="right-menu-item hover-effect" />
         </el-tooltip>
       </template>
+
+      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
+        <div class="avatar-wrapper">
+          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar" />
+          <i class="el-icon-caret-bottom" />
+        </div>
+
+        <el-dropdown-menu slot="dropdown">
+          <router-link to="/profile/index">
+            <el-dropdown-item>Profile</el-dropdown-item>
+          </router-link>
+
+          <router-link to="/">
+            <el-dropdown-item>Dashboard</el-dropdown-item>
+          </router-link>
+
+          <a target="_blank" href="https://github.com/jianyun2020/vue2-admin">
+            <el-dropdown-item>Github</el-dropdown-item>
+          </a>
+
+          <el-dropdown-item divided @click.native="logout">
+            <span style="display:block;">Log Out</span>
+          </el-dropdown-item>
+
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -81,6 +107,11 @@ export default {
     float: left;
   }
 
+  .errLog-container {
+    display: inline-block;
+    vertical-align: top;
+  }
+
   .right-menu {
     float: right;
     height: 100%;
@@ -107,11 +138,25 @@ export default {
         }
       }
     }
-  }
 
-  .errLog-container {
-    display: inline-block;
-    vertical-align: top;
+    .avatar-container {
+      margin-right: 30px;
+
+      .user-avatar {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+
+      .el-icon-caret-bottom {
+        cursor: pointer;
+        position: absolute;
+        right: -20px;
+        top: 25px;
+        font-size: 12px;
+      }
+    }
   }
 }
 </style>
