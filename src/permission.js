@@ -1,8 +1,8 @@
 /*
  * @Author: jianyun2020
  * @Date: 2021-04-16 10:39:46
- * @LastEditTime: 2021-04-16 13:19:00
- * @Description:
+ * @LastEditTime: 2021-04-16 13:55:47
+ * @Description: 权限控制
  * @FilePath: \vue2-admin\src\permission.js
  */
 import router from './router'
@@ -17,8 +17,7 @@ NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 const whiteList = ['/login', '/auth-redirect'] // no redirect whitelist
 
-router.beforeEach (async(to, from, next) => {
-  console.log('beforeEach')
+router.beforeEach(async (to, from, next) => {
   // start progress bar
   NProgress.start()
 

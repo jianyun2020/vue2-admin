@@ -1,7 +1,7 @@
 /*
  * @Author: jianyun2020
  * @Date: 2021-04-15 15:25:25
- * @LastEditTime: 2021-04-16 13:21:03
+ * @LastEditTime: 2021-04-16 13:43:08
  * @Description: 入口文件
  * @FilePath: \vue2-admin\src\main.js
  */

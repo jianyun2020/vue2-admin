@@ -1,11 +1,19 @@
+/*
+ * @Author: jianyun2020
+ * @Date: 2021-04-15 15:25:25
+ * @LastEditTime: 2021-04-16 13:45:40
+ * @Description: Vue配置文件
+ * @FilePath: \vue2-admin\vue.config.js
+ */
 'use strict'
 const path = require('path')
+const defaultSettings = require('./src/settings.js')
 
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = 'NASA'
+const name = defaultSettings.title || 'NASA'
 const port = 8888
 
 module.exports = {
