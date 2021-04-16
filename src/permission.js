@@ -1,7 +1,7 @@
 /*
  * @Author: jianyun2020
  * @Date: 2021-04-16 10:39:46
- * @LastEditTime: 2021-04-16 13:55:47
+ * @LastEditTime: 2021-04-16 14:55:26
  * @Description: 权限控制
  * @FilePath: \vue2-admin\src\permission.js
  */
